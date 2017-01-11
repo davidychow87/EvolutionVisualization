@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 export default class ListExperiments extends Component {
+  hover = (event) => {
 
+
+  }
+  
   render() {
     var experimentItems = [];
     for(var i = 0; i < this.props.experiments.length; i++) {
@@ -25,6 +29,8 @@ const styles = {
   },
 
   item: {
-    backgroundColor: '#ccc'
+    backgroundColor: '#ccc',
+    //hover: backgroundColor: '#92e7fc'
   }
+
 };
