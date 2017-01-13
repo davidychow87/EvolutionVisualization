@@ -20,26 +20,33 @@ export default class App extends Component {
   }
 
   handleClick = (event) => {
-      if(this.state.showList) {
-          this.setState({ showList: false });
-      } else {
-          this.setState( { showList: true} )
-      }
+      this.setState( { showList: true } );
+      // if(this.state.showList) {
+      //     this.setState({ showList: false });
+      // } else {
+      //     this.setState( { showList: true} )
+      // }
   }
+
+  handleLeave = (event) => {
+      this.setState( { showList: false} );
+  }
+
 
   render() {
     return (
       <div>
         <h1>Experiments</h1>
-        <Button onClick={this.handleClick}>CLick Me</Button>
-        {this.state.showList && <ListExperiments experiments={this.state.experiments}/>}
+        <Button onMouseEnter={this.handleClick} onMouseLeave={this.handleLeave}>Experiments</Button>
+        {this.state.showList && <div onMouseEnter={this.handleClick} onMouseLeave={this.handleLeave}> <ListExperiments
+                              experiments={this.state.experiments}/></div>
 
-
-
-
-        {
-          //}<p>{JSON.stringify(this.state.experiments)}</p>
         }
+
+
+        <Button>Plates</Button>
+
+
       </div>
     );
   }
