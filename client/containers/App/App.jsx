@@ -38,14 +38,17 @@ export default class App extends Component {
     }
   }
 
-<<<<<<< HEAD
+
 //
   handleClick = (event) => {
       if(this.state.showList) {
           this.setState({ showList: false });
       } else {
           this.setState( { showList: true} )
-=======
+      }
+  }
+
+
   getPlateId = (experimentId) => {
 
     //console.log(typeof experimentId);
@@ -53,7 +56,7 @@ export default class App extends Component {
       url: '/plates/' + experimentId,
       success: (data, textStatus, jqXHR) => {
         console.log(data);
->>>>>>> 9602cadf481054091041198bf5359de627419295
+
       }
     });
 
@@ -79,14 +82,10 @@ export default class App extends Component {
             </div>
 
           </Col>
-          <Col xs={3}>
-            <Link to="two"><Button>Click here for 2</Button></Link>
-          </Col>
+
         </Row>
         <Row>
-          <Col>
-            {this.props.children}
-          </Col>
+
         </Row>
       </div>
     );
