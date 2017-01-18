@@ -6,6 +6,7 @@ var express = require('express');
 var app = express();
 
 import { getExperiments } from './routes/experiments';
+import { getPlates } from './routes/plates';
 
 var sql = require("mssql");
 var config = require('./config/local.json');
@@ -54,6 +55,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/experiments', getExperiments);
+
+app.get('/plates/:ExpID', getPlates);
 
 var port = Number(process.env.PORT || 3001);
 app.listen(port, function () {

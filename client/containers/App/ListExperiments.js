@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 export default class ListExperiments extends Component {
+  hover = (event) => {
+
+
+  }
 
   render() {
     var experimentItems = [];
     for(var i = 0; i < this.props.experiments.length; i++) {
         let item = this.props.experiments[i].UserDefinedID;
-        experimentItems.push(<ListGroupItem style={styles.item} key={i}>{item}</ListGroupItem>)
+        const expId = this.props.experiments[i].ExperimentID;
+        experimentItems.push(<ListGroupItem style={styles.item} onClick={() => this.props.getPlateID(expId)} key={i}>{item}</ListGroupItem>)
     }
     //react allows arrays of components, null or falsey calues and a single component when you render it
     return (
@@ -25,6 +30,8 @@ const styles = {
   },
 
   item: {
-    backgroundColor: '#ccc'
+    backgroundColor: '#ccc',
+    //hover: backgroundColor: '#92e7fc'
   }
+
 };
