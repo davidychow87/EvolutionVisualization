@@ -19,6 +19,7 @@ export default class App extends Component {
       });
   }
 
+//
   handleClick = (event) => {
       if(this.state.showList) {
           this.setState({ showList: false });
